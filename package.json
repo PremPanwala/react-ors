@@ -1,0 +1,31 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@progress/kendo-react-data-tools": "^3.16.0",
+    "@progress/kendo-react-form": "^3.16.0",
+    "axios": "^0.18.1",
+    "bootstrap": "^4.5.0",
+    "jwt-decode": "^2.2.0",
+    "mdbreact": "^4.27.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-dropzone-uploader": "^2.11.0",
+    "react-helmet": "^6.1.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5",
+    "reactstrap": "^8.5.1",
+    "redirect": "^0.2.0",
+    "sweetalert": "^2.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:5000"
+}
