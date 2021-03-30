@@ -189,6 +189,7 @@ class mybooking extends Component {
         }
     
        else{
+         console.log("Ja be loda")
         return false;
         }
           
