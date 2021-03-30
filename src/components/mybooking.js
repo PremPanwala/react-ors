@@ -62,6 +62,7 @@ class mybooking extends Component {
       }
       //details.fine,details.to,details.total,details._id,details.email,details.from,details.itemname,details.name,details.phoneno
       sayHello(fine,to,total,_id,email,from,itemname,name,phoneno) {
+        let f=0;
         alert(`hello, ${to}`);
         alert(`hello, ${from}`);
         this.state.to=`${to}`;
@@ -87,6 +88,7 @@ class mybooking extends Component {
     
         if ( now.getFullYear()>target.getFullYear() ) 
         {
+            f=1;
             console.log("AFTER YEAR");
             let fi=(Math.round(diffInDays)*this.state.fine);
             this.state.fine=parseInt((Math.round(diffInDays)*this.state.fine));
@@ -114,6 +116,7 @@ class mybooking extends Component {
         else if(target.getFullYear() == now.getFullYear()) 
         {
         if (now.getMonth()>target.getMonth()) {
+          f=1;
             console.log("AFTER MONTH");
             var fi=(Math.round(diffInDays)*this.state.fine);
             this.state.fine=parseInt((Math.round(diffInDays)*this.state.fine));
@@ -140,6 +143,7 @@ class mybooking extends Component {
         else if(target.getMonth() == now.getMonth())
         {
         if ( now.getDate()>target.getDate() ) {
+          f=1;
             console.log("AFTER DAYS");
             var fi=(Math.round(diffInDays)*this.state.fine);
             this.state.fine=parseInt((Math.round(diffInDays)*this.state.fine));
@@ -166,6 +170,7 @@ class mybooking extends Component {
         else
         {
           this.setState({bill: this.state.total});
+          f=1;
             console.log("DATE IS OK");
             swal("ON TIME RETURNED PRODUCT!!!!","TOTAL: "+this.state.total,"success")
             .then((value) => {
@@ -190,6 +195,7 @@ class mybooking extends Component {
     
        else{
          console.log("Ja be loda")
+         f=1;
          this.setState({bill: this.state.total});
             console.log("DATE IS OK");
             swal("ON TIME RETURNED PRODUCT!!!!","TOTAL: "+this.state.total,"success")
@@ -209,7 +215,27 @@ class mybooking extends Component {
               });
         //return false;
         }
-          
+          if(f==0)
+          {
+            console.log("Juggad")
+            this.setState({bill: this.state.total});
+            console.log("DATE IS OK");
+            swal("ON TIME RETURNED PRODUCT!!!!","TOTAL: "+this.state.total,"success")
+            .then((value) => {
+              fetch('https://node-ors-server.herokuapp.com/demo/change/',{
+          method:"Post",
+          headers:{
+              'Content-Type':'application/json'
+          },
+          body:JSON.stringify(this.state)
+      })
+              .then(response => {
+                window.location.replace(window.location.origin+"/mybooking");  });
+              })
+              .catch(error => {
+                console.log(error);
+              });
+          }
       }
     render() {
         return (
