@@ -63,6 +63,7 @@ class mybooking extends Component {
       //details.fine,details.to,details.total,details._id,details.email,details.from,details.itemname,details.name,details.phoneno
       sayHello(fine,to,total,_id,email,from,itemname,name,phoneno) {
         alert(`hello, ${to}`);
+        alert(`hello, ${from}`);
         this.state.to=`${to}`;
         this.state.fine=`${fine}`;
         this.state.total=`${total}`;
