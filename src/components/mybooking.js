@@ -190,7 +190,24 @@ class mybooking extends Component {
     
        else{
          console.log("Ja be loda")
-        return false;
+         this.setState({bill: this.state.total});
+            console.log("DATE IS OK");
+            swal("ON TIME RETURNED PRODUCT!!!!","TOTAL: "+this.state.total,"success")
+            .then((value) => {
+              fetch('https://node-ors-server.herokuapp.com/demo/change/',{
+          method:"Post",
+          headers:{
+              'Content-Type':'application/json'
+          },
+          body:JSON.stringify(this.state)
+      })
+              .then(response => {
+                window.location.replace(window.location.origin+"/mybooking");  });
+              })
+              .catch(error => {
+                console.log(error);
+              });
+        //return false;
         }
           
       }
