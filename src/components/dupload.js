@@ -127,16 +127,17 @@ export default class ModalComponent extends React.Component {
     formData.append('rent',this.state.rent);
     formData.append('fine',this.state.fine);
     console.log(formData);
+    axios.post("https://node-ors-server.herokuapp.com/demo/user-profile", formData, {
+    }).then(res => {
+        console.log(res)
+    })
     
   })
     
    const timer =setTimeout(()=>{
     console.log(this.state.image);
-    axios.post("https://node-ors-server.herokuapp.com/demo/user-profile", formData, {
-    }).then(res => {
-        console.log(res)
-    })
-  },6000);
+    
+  },10000);
       
       
       
