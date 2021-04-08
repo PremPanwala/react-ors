@@ -117,7 +117,7 @@ class Show1 extends Component {
         <figure class="card card-product-grid card-lg"> <a href="#" class="img-wrap" data-abc="true"> <img src={details.image}></img> </a>
             <figcaption class="info-wrap">
                 <div class="row">
-                    <div class="col-md-9 col-xs-9"> <a href="#" class="title" data-abc="true">{details.itemname}</a> </div>
+                    <div class="col-md-9 col-xs-9"> <a href="#" class="title" data-abc="true">Item Name:{details.itemname}</a> </div>
                     
                 </div>
             </figcaption>
@@ -127,6 +127,8 @@ class Show1 extends Component {
                         <div class="col-md-9 col-xs-9"> <a href="#" class="title" data-abc="true">Description = {details.itemdetail}</a> </div>
                         <div class="col-md-9 col-xs-9"> <a href="#" class="title" data-abc="true">Price = ${details.rent}</a>  </div>
                         <div class="col-md-9 col-xs-9"> <a href="#" class="title" data-abc="true">Fine = ${details.fine}</a>  </div>
+                        <div class="col-md-9 col-xs-9"> <a href="#" class="title" data-abc="true">Phone NO. = {details.phoneno}</a>  </div>
+                        <div class="col-md-9 col-xs-9"> <a href="#" class="title" data-abc="true">Email = {details.email}</a>  </div>
                         
                         
                     </div>
