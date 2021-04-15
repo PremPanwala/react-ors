@@ -9,7 +9,7 @@ import {useHistory} from 'react-router'
 class Contact extends Component {
    
   constructor() {
-    let history=useHistory();
+    //let history=useHistory();
     super()
     //const history = useHistory();
     this.state = {
